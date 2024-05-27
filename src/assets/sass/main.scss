@@ -1,0 +1,30 @@
+.main {
+  flex-grow: 1;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 2rem;
+
+    &:has(.main__sidebar) {
+      grid-template-columns: 264px 1fr;
+
+      @media (width < $mobile-width) {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+
+  &__sidebar {
+    position: sticky;
+    top: 2rem;
+
+    @media (width < $mobile-width) {
+      position: static;
+    }
+  }
+}

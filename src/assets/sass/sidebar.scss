@@ -1,0 +1,34 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid $sidebar-border-color;
+  border-radius: 1.5rem;
+
+  &__label {
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    line-height: 1.5rem;
+    width: 100%;
+    min-height: 42px;
+    padding: 1rem;
+    border-radius: 1rem;
+    outline: 2px solid transparent;
+    outline-offset: -2px;
+    transition: color $transition-timing, background-color $transition-timing,
+      outline-color $transition-timing;
+
+    &:has(.sidebar__input:focus-visible),
+    &:hover {
+      outline-color: $text-color;
+    }
+
+    &:has(.sidebar__input:checked) {
+      color: $sidebar-active-text-color;
+      background-color: $accent-color;
+    }
+  }
+}

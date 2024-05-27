@@ -1,0 +1,49 @@
+.course-card {
+  height: 100%;
+  display: grid;
+  grid-auto-rows: min-content;
+  gap: 12px;
+  border-radius: 1.5rem;
+  box-shadow: $shadow;
+  overflow: hidden;
+  line-height: 1.5rem;
+  position: relative;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+  transition: outline-color $transition-timing;
+
+  & > * {
+    order: 1;
+  }
+
+  &:focus-within,
+  &:hover {
+    outline-color: $text-color;
+  }
+
+  &__img-wrapper {
+    order: 0;
+    padding: 0.75rem;
+    text-align: center;
+  }
+
+  &__content-wrapper {
+    padding: 0 1.5rem 1.5rem;
+  }
+
+  &__heading {
+    font-size: 1.5rem;
+
+    a {
+      outline: none;
+      color: $text-color;
+      text-decoration: none;
+
+      &::before {
+        position: absolute;
+        content: '';
+        inset: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.course-list {
+  ul {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(177px, 1fr));
+    gap: 1.5rem;
+
+    @media (width < $desktop-width) {
+      grid-template-columns: repeat(2, minmax(177px, 1fr));
+    }
+
+    @media (width < $tablet-width) {
+      grid-template-columns: minmax(177px, 1fr);
+    }
+  }
+}
